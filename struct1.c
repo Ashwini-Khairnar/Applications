@@ -1,41 +1,20 @@
-#include<stdio.h>
+// sizeof operator & stuctures
 
-struct Demo
+#include<stdio.h>
+#pragma pack(1)
+struct pad
 {
-    int i;
-    struct Demo *ptr;
+    char a;
+    int b;
+    char c;
+    float d;
 };
 
 int main()
 {
-    struct Demo dobj1,dobj2,dobj3;
+    struct pad obj;
 
-    struct Demo * p = &dobj1;
-
-    dobj1.i = 11;
-    dobj1.ptr = &dobj2;
-
-    dobj2.i = 21;
-    dobj2.ptr = &dobj3;
-
-    dobj3.i = 51;
-    dobj3.ptr = NULL;
-
-    printf("%d\n",dobj1.ptr->ptr->i);
-
+    printf("Object of type struct pad will take %d bytes\n",sizeof(struct pad));
+    printf("Structure variable obj takes %d bytes\n",sizeof(obj));
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,23 +1,21 @@
+////////////////////////////////////////////////////////////
+//
+//Input:    
+//Output:    
+//Description:initializers are compatible but different types
+//Author:   Ashwini
+//Date:     06/03/22
+//
+/////////////////////////////////////////////////////////////
 #include<stdio.h>
 int main()
 {
-    int a[5];    //array definition
+    int arr1[] = {2.3, 4.5, 6.9};
+    float arr2[] = {'A','B','C'};
 
-    //array initialisation
-    //member by member initialisation
+    printf("Elements of array are initialized with\n");
 
-    a[0]=10;
-    a[1]=20;
-    a[2]=30;
-    a[3]=40;
-    a[4]=50;
-
-    //member initialisation list
-    int b[5]={10,20,30,40,50};
-
-    int c[]={10,20,30,40,50};
-
-   // int d[];     Error
-
+    printf("arr1 : %d %d %d\n", arr1[0],arr1[1],arr1[2]);
+    printf("arr2 : %f %f %f\n", arr2[0],arr2[1],arr2[2]);
     return 0;
 }

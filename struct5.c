@@ -1,50 +1,24 @@
+//Pointer to structure
+
 #include<stdio.h>
 
-struct Demo
+struct coord
 {
-    int i;
-    int j;
-    float f;
-};
-
-union Hello
-{
-    int i;
-    int j;
-    float f;
-};
-
+    int x,y,z;
+}pt1={2,3,5}, *ptr1;
 int main()
 {
-    struct Demo dobj;
-    union Hello hobj;
+    struct coord pt2={4,5,6};
+    struct coord *ptr2=&pt2;
 
-    dobj.i = 11;
-    dobj.j = 21;
+    ptr1=&pt1;
 
-    hobj.i = 11;
-    hobj.j = 21;
-
-    printf("%d\n",sizeof(dobj));
-    printf("%d\n",sizeof(hobj));
-
-    printf("%d\n",dobj.i);      // 11
-    printf("%d\n",dobj.j);      // 21
-    printf("%d\n",hobj.i);      // 21       //union access only 1 element at a time
-    printf("%d\n",hobj.j);      // 21
+    printf("Address of pt1 and pt2 are %d %d\n",&pt1,&pt2);
+    printf("Address of ptr1 and ptr2 are %d %d\n",&ptr1,&ptr2);
+    printf("ptr1 and ptr2 points to %d %d\n",ptr1,ptr2);
+    printf("Size of type (struct coord) is %d\n",sizeof(struct coord));
+    printf("Size of type (struct coord*) is %d\n",sizeof(struct coord*));
+    printf("Size of pt1 is %d\n", sizeof(pt1));
+    printf("Size of pt2 is %d\n", sizeof(pt2));
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

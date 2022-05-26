@@ -1,32 +1,26 @@
+//Equality operator and stucture
 #include<stdio.h>
 
-struct Demo
+struct pad
 {
-    int i;
-    int j;
+    char a;
+    int b;
+    float c;
 };
 
 int main()
 {
-    const struct Demo obj = {11,21};
-  //  const struct Demo obj;
- //   obj.i=11;                     not allowed
-    printf("%d\n",obj.i);
-    printf("%d\n",obj.j);
-    
+    struct pad obj1={'A',2,10.11}, obj2={'A',2,10.11};
+    const struct pad obj3={'B',3,5.5}, obj4={'B',3,5.5};
+
+    if(obj1.a==obj2.a && obj1.b==obj2.b && obj1.c==obj2.c)
+        printf("Structure variables are Equal\n");
+    else
+        printf("Structure variables are Unequal\n");
+
+     if(obj3.a==obj4.a && obj3.b==obj4.b && obj3.c==obj4.c)
+        printf("Structure Constants are Equal\n");
+    else
+        printf("Structure constants are Unequal\n");
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
